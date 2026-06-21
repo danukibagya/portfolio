@@ -428,7 +428,10 @@ body {
     border-radius: 5px;
     width: 80%;
   }
-  .typewriter h2 {
-    white-space:normal;
+
+}
+@media (max-width:312px){
+  .typewriter h2{
+    font-size: 1rem;
   }
 }
