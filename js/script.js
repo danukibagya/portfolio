@@ -73,4 +73,14 @@ window.addEventListener('scroll', () => {
       card.classList.add('show');
     }
   });
+
+  function openFullscreen(imgSrc) {
+  console.log("Click worked!");
+  document.getElementById("fullscreenModal").style.display = "flex";
+  document.getElementById("fullImg").src = imgSrc;
+}
+
+function closeFullscreen() {
+  document.getElementById("fullscreenModal").style.display = "none";
+}
 });
