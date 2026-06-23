@@ -73,6 +73,7 @@ window.addEventListener('scroll', () => {
       card.classList.add('show');
     }
   });
+  });
 
   function openFullscreen(imgSrc) {
   console.log("Click worked!");
