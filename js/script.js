@@ -83,4 +83,3 @@ window.addEventListener('scroll', () => {
 function closeFullscreen() {
   document.getElementById("fullscreenModal").style.display = "none";
 }
-});
