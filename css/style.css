@@ -249,6 +249,10 @@ body {
   transform: scale(1.08);
 }
 
+.card a:hover {
+  color: var(--primary-color);
+}
+
 .modal {
   display: none; /* මුලින්ම වහලා තියෙන්නේ, JS එකෙන් flex කරයි */
   position: fixed;
