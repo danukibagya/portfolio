@@ -249,59 +249,44 @@ body {
   transform: scale(1.08);
 }
 
-/* පින්තූරේ උඩින් වැටෙන ලස්සන කළු Overlay එක සහ විස්තර */
-.project-info {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: linear-gradient(to top, rgba(0, 0, 0, 0.9) 0%, rgba(0, 0, 0, 0.2) 100%);
-  padding: 1.5rem;
-  display: flex;
+.modal {
+  display: none; /* මුලින්ම වහලා තියෙන්නේ, JS එකෙන් flex කරයි */
+  position: fixed;
+  z-index: 999999;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  background-color: rgba(0,0,0,0.6); /* semi-transparent black background */
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px); 
   flex-direction: column;
-  justify-content: flex-end; /* විස්තර ටික කාඩ් එකේ පහලට කරනවා */
-  opacity: 0; /* මුලින් පේන්නේ නැහැ */
-  transition: opacity 0.4s ease;
-  z-index: 2;
+  justify-content: center;
+  align-items: center;
 }
 
-/* මවුස් එක උඩට ගියාම විස්තර ලස්සනට Fade-in වෙනවා */
-.card:hover .project-info {
-  opacity: 1;
+#closeBtn {
+  color: white;
+  font-size: 45px;
+  cursor: pointer;
+  align-self: flex-end; /* බොත්තම දකුණු පැත්තේ කෙළවරටම ගන්න */
+  margin-right: 8%;     /* පින්තූරේ කෙළවරට සමාන වෙන්න දකුණෙන් ඉඩක් */
+  margin-bottom: 10px;  /* පින්තූරෙයි බොත්තමයි අතර පරතරය */
 }
 
-/* අකුරු වල ස්ටයිල් */
-.project-bio h3 {
-  font-size: 1.2rem;
-  font-weight: var(--weight-semibold);
-  color: #ffffff;
-  margin-bottom: 0.3rem;
+.modal-content {
+  max-width: 90%;
+  max-height: 75vh;     /* උඩින් බොත්තම ඉන්න නිසා උස 75vh කළාම හැම තිරයටම පට්ටම ලස්සනයි */
+  object-fit: contain;
+  animation: spinIn 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards;
 }
-
-.project-bio p {
-  font-size: 0.85rem;
-  color: var(--primary-color); /* React, Redux වගේ ඒවා රන්වන් පාටින් පේන්න */
-  margin: 0 !important;
-  padding: 0 !important;
-  text-align: left !important;
-}
-
-/* Links සහ Icons */
-.project-link {
-  margin-top: 0.8rem;
-  display: flex;
-  gap: 10px;
-}
-
-.card a {
-  color: #ffffff;
-  font-size: 1.2rem;
-  transition: color 0.3s ease;
-}
-
-.card a:hover {
-  color: var(--primary-color);
+@keyframes spinIn {
+  from {
+    transform: scale(0) rotate(-180deg); /* මුලින්ම බිංදුවේ සයිස් එකට අංශක -180ක් කැරකිලා තියෙන්නේ */
+    opacity: 0;
+  }
+  to {
+    transform: scale(1) rotate(0deg);    /* සාමාන්‍ය සයිස් එකට ඇවිත් කෙලින් හිටිනවා */
+    opacity: 1;
+  }
 }
 /* Footer */
 #footer {
